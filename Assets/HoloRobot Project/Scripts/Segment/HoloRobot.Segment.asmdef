@@ -1,0 +1,16 @@
+{
+    "name": "HoloRobot.Segment",
+    "rootNamespace": "",
+    "references": [
+        "GUID:29f8b377669d21c4e9a196482edb8bcd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

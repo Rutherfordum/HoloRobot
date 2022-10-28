@@ -1,0 +1,20 @@
+{
+    "name": "HoloRobot.Robot",
+    "rootNamespace": "HoloRobot.Robot",
+    "references": [
+        "GUID:59e6cd13f0c6da64ab5dbb65d0f20643",
+        "GUID:600cdc785c61c8d4b89b2dd048bcbda0",
+        "GUID:c52663c171f4da147bfc5891e58fe091",
+        "GUID:29f8b377669d21c4e9a196482edb8bcd",
+        "GUID:2d795fcebcd84a24a8795db0d4b3ccd9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

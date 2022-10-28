@@ -1,0 +1,24 @@
+{
+    "name": "HoloRobot.Goal",
+    "rootNamespace": "HoloRobot.Goal",
+    "references": [
+        "GUID:7404ed9ad29ad3844ac3a261c8d45b60",
+        "GUID:a7a4c34601384f9389d5c4207f3c6331",
+        "GUID:8b7cc3e86d77403b8b984c08cbaeaf8f",
+        "GUID:c52663c171f4da147bfc5891e58fe091"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "WSA",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

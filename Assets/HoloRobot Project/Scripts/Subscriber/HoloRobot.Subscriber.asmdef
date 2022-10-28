@@ -1,0 +1,23 @@
+{
+    "name": "HoloRobot.Subscriber",
+    "rootNamespace": "HoloRobot.Subscriber",
+    "references": [
+        "GUID:59e6cd13f0c6da64ab5dbb65d0f20643",
+        "GUID:c52663c171f4da147bfc5891e58fe091"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "iOS",
+        "WSA",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
