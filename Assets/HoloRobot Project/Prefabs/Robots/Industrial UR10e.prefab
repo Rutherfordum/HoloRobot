@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049e2ad874565b4fb6d394eab7cf791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: UR10e
+  m_CartesianGoal: {fileID: 6978461838971738083, guid: 8411b5dcf07454d418e5cce6517317e4,
+    type: 3}
+  m_JointGoalPrefab: {fileID: 6525390366015390387, guid: 251d99a6d7dd13d44bf35eaa26e910d7,
+    type: 3}
   Joints:
   - {fileID: 2128233710301503813}
   - {fileID: 2128233709850612894}

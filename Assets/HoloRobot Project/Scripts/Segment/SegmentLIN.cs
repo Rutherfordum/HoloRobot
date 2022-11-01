@@ -5,7 +5,7 @@ namespace HoloRobot.Segment
 {
     public class SegmentLIN : Segment
     {
-        public SegmentLIN(IGoal goal1, IGoal goal2) : base(goal1, goal2)
+        public SegmentLIN(Goal.Goal goal1, Goal.Goal goal2) : base(goal1, goal2)
         {
         }
     }

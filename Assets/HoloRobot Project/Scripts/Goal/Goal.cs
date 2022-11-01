@@ -2,12 +2,12 @@
 
 namespace HoloRobot.Goal
 {
-    public interface IGoal
+    public abstract class Goal: MonoBehaviour
     {
-        public void Hide(bool value);
+        public abstract void Hide(bool value);
 
-        public void Lock();
+        public abstract void Lock();
 
-        public void UnLock();
+        public abstract void UnLock();
     }
 }

@@ -4,10 +4,10 @@ namespace HoloRobot.Segment
 {
     public abstract class Segment: MonoBehaviour
     {
-        protected Segment(Goal.IGoal goal1, Goal.IGoal goal2)
+        protected Segment(Goal.Goal goal1, Goal.Goal goal2)
         {
-            _goal1 = goal1 as Transform;
-            _goal2 = goal2 as Transform;
+            _goal1 = goal1.transform;
+            _goal2 = goal2.transform;
         }
 
         private Transform _goal1;

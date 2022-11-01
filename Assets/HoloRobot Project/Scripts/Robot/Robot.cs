@@ -7,46 +7,70 @@ using UnityEngine.Events;
 
 namespace HoloRobot.Robot
 {
-    public abstract class Robot : MonoBehaviour, IRobotConnector, IRobotGoal
+    public abstract class Robot : MonoBehaviour, IRobotConnector, IRobotCartesianGoal
     {
-        [Header("Robot Settings")] 
-        [SerializeField] private string m_Name;
-        [SerializeField] private IGoal m_GoalLINPrefab;
-        [SerializeField] private HoloRobot.Segment.Segment m_SegmentLINPrefab;
+        #region Goal Cartesian parametrs
 
-        public List<IGoal> Goals = new List<IGoal>();
+        [Header("Cartesian Goal Settings")]
+        [Space(10)]
+        [SerializeField] private string m_Name;
+        [SerializeField] private Goal.Goal m_CartesianGoal;
+        private List<Goal.Goal> m_CartesianGoals;
+
+        public string Name => m_Name;
+        public Goal.Goal CartesianGoalPrefab => m_CartesianGoal;
+        public List<Goal.Goal> CartesianGoals => m_CartesianGoals;
+
+        #endregion
+
+        #region Connector parametrs
 
         protected IRosConnector RosConnector;
-        
         protected readonly UnityEvent<bool> ConnectedEvent = new UnityEvent<bool>();
 
+        #endregion
+
+        #region Goal Cartesian Methods
+
+        public void AddCartesianGoal()
+        {
+            if (m_CartesianGoal != null)
+            {
+                Goal.Goal goal = Instantiate(m_CartesianGoal.gameObject, transform).GetComponent<Goal.Goal>();
+                m_CartesianGoals.Add(goal);
+            }
+        }
+        public void DeleteCartesianGoal(Goal.Goal goalObject)
+        {
+            if (m_CartesianGoals.Contains(goalObject))
+                m_CartesianGoals.Remove(goalObject);
+
+            Destroy(goalObject.gameObject);
+        }
+        public void ClearCartesianGoal()
+        {
+            foreach (var goal in m_CartesianGoals)
+                Destroy(goal);
+
+            m_CartesianGoals?.Clear();
+        }
+
+        #endregion
+
+        #region Connector Methods
 
         public void Connect(string url, RosSharp.RosBridgeClient.Protocols.Protocol protocol, RosSharp.RosBridgeClient.RosSocket.SerializerEnum serializer)
         {
             RosConnector?.Disconnect();
-
             RosConnector = new RosConnector(url, protocol, serializer);
             RosConnector.ConnectedHandler += (sender, b) => ConnectedEvent?.Invoke(b);
             RosConnector?.Connect();
         }
-
         public void Disconnect()
         {
             RosConnector?.Disconnect();
         }
 
-        public void AddGoal(Goal.IGoal goalPrefab)
-        {
-            if (goalPrefab != null)
-                Goals.Add(Instantiate(goalPrefab as Transform, transform) as IGoal);
-        }
-
-        public void DeleteGoal(Goal.IGoal goalObject)
-        {
-            if (Goals.Contains(goalObject))
-                Goals.Remove(goalObject);
-
-            Destroy(goalObject as Transform);
-        }
+        #endregion
     }
 }

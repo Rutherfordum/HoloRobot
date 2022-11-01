@@ -2,9 +2,6 @@
 {
     public interface IGripper
     {
-        public void ChangeGripperState()
-        {
-
-        }
+        public void ChangeGripperState();
     }
 }

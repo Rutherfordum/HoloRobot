@@ -5,12 +5,20 @@ using RosSharp.RosBridgeClient;
 using RosSharp.RosBridgeClient.Protocols;
 using UnityEngine;
 
-public sealed class UR10eIndustrialRobot : IndustrialRobot
+public sealed class Ur10EIndustrialRobot : IndustrialRobot
 {
-    UR10eIndustrialRobot()
+    Ur10EIndustrialRobot()
     {
-        Debug.Log("Created");
+        OnConnect();
     }
+
+    ~Ur10EIndustrialRobot()
+    {
+        OnDisconnect();
+        Debug.Log("Created");
+
+    }
+
     private void Awake()
     {
         Debug.Log("Created on awake");
@@ -53,5 +61,21 @@ public sealed class UR10eIndustrialRobot : IndustrialRobot
     public void OnDisconnect()
     {
         Disconnect();
+    }
+
+    public void OnAddCartesianGoal()
+    {
+        AddCartesianGoal();
+    }
+
+    public void OnAddJointGoal()
+    {
+        AddJointGoal();
+    }
+
+    public void OnClear()
+    {
+        ClearCartesianGoal();
+        ClearJointGoal();
     }
 }
